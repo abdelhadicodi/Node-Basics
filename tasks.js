@@ -40,6 +40,9 @@ function onDataReceived(text) {
   else if(text === 'hello\n'){
     hello();
   }
+  else if (text === 'exit\n'){
+    quit();
+  }
   else{
     unknownCommand(text);
   }
