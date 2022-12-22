@@ -43,9 +43,15 @@ function onDataReceived(text) {
   else if (text === 'exit\n'){
     quit();
   }
+  else if (text === 'help\n'){
+    help();
+  }
   else{
     unknownCommand(text);
   }
+}
+function help(help){
+  console.log("exit and quit: using to close node")
 }
 
 
