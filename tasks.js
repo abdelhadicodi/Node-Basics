@@ -50,8 +50,10 @@ function onDataReceived(text) {
     unknownCommand(text);
   }
 }
+
+// "help" is using to help you knowing what each command does
 function help(help){
-  console.log("exit and quit: using to close node")
+  console.log("exit and quit: using to exit the application")
 }
 
 
