@@ -75,8 +75,8 @@ var commands = [`hello: to say hello`,
   `help: to list the commands`,
   `list: to show your tasks`,
   `add: to add a task`,
-  `remove: to remove a task`
-  `edit: to edit in the task`
+  `remove: to remove a task`,
+  `edit: to edit in the task`,
 ]
 
 
