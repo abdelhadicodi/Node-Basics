@@ -37,8 +37,8 @@ function onDataReceived(text) {
   if (text === 'quit\n') {
     quit();
   }
-  else if(text === 'hello\n'){
-    hello();
+  else if(text === 'hello\n' || text.split(" ")[0] === 'hello'){
+    hello(text);
   }
   else if (text === 'exit\n'){
     quit();
@@ -50,10 +50,14 @@ function onDataReceived(text) {
     unknownCommand(text);
   }
 }
-
+var commands = [`hello: to say hello`, `exit and quit: to exit the application`, `help: to list the commands` ]
 // "help" is using to help you knowing what each command does
 function help(help){
-  console.log("exit and quit: using to exit the application")
+  for (var i=0; i<commands.length; i++){
+    console.log(commands[i]);
+  }
+  
+
 }
 
 
@@ -74,8 +78,14 @@ function unknownCommand(c){
  *
  * @returns {void}
  */
-function hello(){
-  console.log('hello!')
+function hello(text){
+  text = text.replace('\n', '').trim();
+  const words = text.split(' ');
+  if(words[0] === 'hello') {
+    const variable = words.slice(1).join(' ');
+    console.log(`hello ${variable}!`);
+  }
+  
 }
 
 
