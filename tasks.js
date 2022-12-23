@@ -50,7 +50,6 @@ function onDataReceived(text) {
     unknownCommand(text);
   }
 }
-var commands = [`hello: to say hello`, `exit and quit: to exit the application`, `help: to list the commands` ]
 // "help" is using to help you knowing what each command does
 function help(help){
   for (var i=0; i<commands.length; i++){
@@ -59,6 +58,7 @@ function help(help){
   
 
 }
+var commands = [`hello: to say hello`, `exit and quit: to exit the application`, `help: to list the commands` ]
 
 
 /**
