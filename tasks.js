@@ -79,13 +79,18 @@ function unknownCommand(c){
  * @returns {void}
  */
 function hello(text){
-  text = text.replace('\n', '').trim();
+  if(text === 'hello\n') {
+    console.log("hello!")
+  }
+  else {
+    text = text.replace('\n', '').trim();
   const words = text.split(' ');
   if(words[0] === 'hello') {
     const variable = words.slice(1).join(' ');
     console.log(`hello ${variable}!`);
   }
   
+  }
 }
 
 
