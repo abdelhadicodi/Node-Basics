@@ -126,7 +126,7 @@ function remove(remove){
     remove = remove.replace('\n', '').trim()
     remove = parseInt(remove.split(" ").slice(1).join(' '));
     list.splice(remove - 1,1);
-    if(remove > list.length){console.log("no task")} 
+    if(remove > list.length){console.log("number does not exist")} 
   }
 }
 
