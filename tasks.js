@@ -49,6 +49,9 @@ function onDataReceived(text) {
   else if (text === 'list\n'){
     lists(text);
   }
+  else if (text.startsWith('add')){
+    add(text);
+  }
   else{
     unknownCommand(text);
   }
@@ -96,14 +99,22 @@ function hello(text){
   }
 }
 // list all tasks
-let list=["exit", "quit", "say hello"]
+let list=[]
 function lists(){
     for (var i=0 ; i<list.length; i++){
       console.log(`${i + 1}- ${list[i]}`);
     }
 }
-
-
+// add command
+function add(task){
+  task=task.trim().split(" ")[1]
+  if (task==undefined){
+    console.log("please enter a valid task")
+  }
+  else{
+    list.push(task)
+  }
+}
 
 /**
  * Exits the application
