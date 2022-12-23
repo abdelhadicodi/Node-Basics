@@ -67,7 +67,7 @@ function help(help){
   
 
 }
-var commands = [`hello: to say hello`, `exit and quit: to exit the application`, `help: to list the commands` ]
+var commands = [`hello: to say hello`, `exit and quit: to exit the application`, `help: to list the commands`, `list: to show your tasks`, `add: to add a task`, `remove: to remove a task` ]
 
 
 /**
