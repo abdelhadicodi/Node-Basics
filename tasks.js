@@ -58,6 +58,12 @@ function onDataReceived(text) {
   else if (text.split(" ")[0] === 'edit' || text === `edit\n`) {
     edit(text);
   }
+ else if (text.split(" ")[0] === "check" || text === "check\n") {
+  checkList(text);
+ }
+ else if (text.split(" ")[0] === "uncheck" || text === "uncheck\n") {
+  uncheckList(text);
+}
   else {
     unknownCommand(text);
   }
@@ -156,7 +162,39 @@ function edit(text) {
     }
   }
 }
-
+// check and uncheck command
+function checkList(text) {
+  if (text === "check\n") {
+    console.log("error")
+    return
+  }
+  text = text.replace('\n', '').trim()
+  const words = text.split(" ")
+  if (words[0] === "check") {
+    const a = words.slice(1).join(' ')
+    if (a[0] > list.length) {
+      console.log("number not exist")
+    } else {
+      list.splice(`${a[0] - 1}`, 1, `[✓]${list[a - 1].slice(3)}`)
+    }
+  }
+}
+function uncheckList(text) {
+  if (text === "uncheck\n") {
+    console.log("error")
+    return
+  }
+  text = text.replace('\n', '').trim();
+  const words = text.split(' ');
+  if (words[0] === "uncheck") {
+    const a = words.slice(1).join(' ')
+    if (a[0] > list.length) {
+      console.log("number not exist")
+    } else {
+      list.splice(`${a[0] - 1}`, 2, `[ ]${list[a - 1].slice(3)}`)
+    }
+  }
+}
 
 /**
  * Exits the application
