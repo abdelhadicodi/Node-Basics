@@ -52,6 +52,9 @@ function onDataReceived(text) {
   else if (text.startsWith('add')){
     add(text);
   }
+  else if(text.split(" ")[0] === 'remove' || text === 'remove\n'){
+    remove(text);
+  }
   else{
     unknownCommand(text);
   }
@@ -115,6 +118,18 @@ function add(task){
     list.push(task)
   }
 }
+// remove command
+function remove(remove){
+  if(remove === 'remove\n') {
+    return list.pop();
+  } else {
+    remove = remove.replace('\n', '').trim()
+    remove = parseInt(remove.split(" ").slice(1).join(' '));
+    list.splice(remove - 1,1);
+    if(remove > list.length){console.log("no task")} 
+  }
+}
+
 
 /**
  * Exits the application
