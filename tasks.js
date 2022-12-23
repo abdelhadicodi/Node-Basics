@@ -46,6 +46,9 @@ function onDataReceived(text) {
   else if (text === 'help\n'){
     help();
   }
+  else if (text === 'list\n'){
+    lists(text);
+  }
   else{
     unknownCommand(text);
   }
@@ -92,6 +95,14 @@ function hello(text){
   
   }
 }
+// list all tasks
+let list=["exit", "quit", "say hello"]
+function lists(){
+    for (var i=0 ; i<list.length; i++){
+      console.log(`${i + 1}- ${list[i]}`);
+    }
+}
+
 
 
 /**
