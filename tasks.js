@@ -83,6 +83,8 @@ var commands = [`hello: to say hello`,
   `add: to add a task`,
   `remove: to remove a task`,
   `edit: to edit in the task`,
+  `check: to check an element is done`,
+  `uncheck: to uncheck an element`
 ]
 
 
